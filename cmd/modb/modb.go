@@ -8,6 +8,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+
+	"github.com/nixusr/mobileorg-dropbox/pkg/mobileorg"
 )
 
 const (
@@ -54,7 +56,13 @@ func main() {
 	}
 
 	if *upload {
-		fmt.Println("Uploading...")
+		files, err := mobileorg.GetFiles(*moblocal)
+		if err != nil {
+			panic(err.Error())
+		}
+		for _, f := range files {
+			fmt.Println(f)
+		}
 	} else {
 		fmt.Println("Downloading..")
 	}
