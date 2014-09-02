@@ -66,6 +66,7 @@ func main() {
 	if err != nil {
 		panic(err.Error())
 	}
+
 	for _, f := range files {
 		if *upload {
 			modb.UploadFile(ds, f, *mobremote)
@@ -76,6 +77,7 @@ func main() {
 
 }
 
+// This function get an env variable and returns true if it is not empty
 func getFlagEnv(name *string, envname string) bool {
 	if *name == "" {
 		*name = os.Getenv(envname)
@@ -83,9 +85,11 @@ func getFlagEnv(name *string, envname string) bool {
 			return false
 		}
 	}
+
 	return true
 }
 
+// Valid all flags which are required
 func ValidFlags() bool {
 	if !getFlagEnv(mobtoken, EnvMobileOrgToken) {
 		return false

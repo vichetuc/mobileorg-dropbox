@@ -5,7 +5,6 @@
 // Package dropbox implements the interface with Dropbox API.
 //
 // This package uses the library: [https://github.com/scottferg/Dropbox-Go]
-
 package dropbox
 
 import (
@@ -22,6 +21,7 @@ func getUri(filename string, path string) dropbox.Uri {
 		Root: dropbox.RootDropbox,
 		Path: path + filename,
 	}
+
 	return uriPath
 }
 
@@ -34,11 +34,11 @@ func UploadFile(ds dropbox.Session, local string, remote string) (bool, error) {
 		return false, err
 	} else {
 		_, err := dropbox.UploadFile(ds, file, uriPath, nil)
-
 		if err != nil {
 			return false, err
 		}
 	}
+
 	return true, nil
 }
 
