@@ -4,6 +4,16 @@ Mobileorg-Dropbox is a command-line tool for upload/download files from mobile-o
 
 This project uses [scottferg/Dropbox-Go](https://github.com/scottferg/Dropbox-Go) Go library for Dropbox API.
 
+Installation
+------------
+
+`go get github.com/nixusr/mobileorg/cmd/modb`
+
+Usage
+-----
+
+`modb -h`
+
 License
 -------
 Copyright 2014 Lenilson Jose Dias. All rights reserved.
