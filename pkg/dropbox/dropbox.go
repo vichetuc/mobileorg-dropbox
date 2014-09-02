@@ -13,6 +13,7 @@ import (
 	"path"
 
 	"github.com/scottferg/Dropbox-Go/dropbox"
+	"os"
 )
 
 // Get URI to remote Dropbox file.
@@ -41,6 +42,19 @@ func UploadFile(ds dropbox.Session, local string, remote string) (bool, error) {
 	return true, nil
 }
 
-func DownloadFile(dir string) (bool, error) {
+// Download a file using dropbox
+func DownloadFile(ds dropbox.Session, local string, remote string) (bool, error) {
+	fname := path.Base(local)
+	uriPath := getUri(fname, remote)
+
+	f, _, err := dropbox.GetFile(ds, uriPath, nil)
+	if err != nil {
+		return false, err
+	}
+	err = ioutil.WriteFile(local, f, os.ModePerm)
+	if err != nil {
+		return false, err
+	}
+
 	return true, nil
 }
