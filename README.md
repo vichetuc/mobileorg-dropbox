@@ -7,7 +7,7 @@ This project uses [scottferg/Dropbox-Go](https://github.com/scottferg/Dropbox-Go
 Installation
 ------------
 
-`go get github.com/nixusr/mobileorg/cmd/modb`
+`go get github.com/nixusr/mobileorg-dropbox/cmd/modb`
 
 Usage
 -----
