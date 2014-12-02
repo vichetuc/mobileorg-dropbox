@@ -43,9 +43,9 @@ Options:
 var (
 	mobtoken  = flag.String("t", "", "Dropbox app Oauth2AccessToken for MobileOrg.")
 	moblocal  = flag.String("l", "", "Local Mobileorg directory.")
-	mobremote = flag.String("r", "", "Remote MobileOrg directory;")
-	upload    = flag.Bool("upload", false, "Upload MobileOrg files to Dropbox app folder")
-	download  = flag.Bool("download", false, "Download MobileOrg Files from Dropbox app foder")
+	mobremote = flag.String("r", "", "Remote MobileOrg directory.")
+	upload    = flag.Bool("upload", false, "Upload MobileOrg files to Dropbox app folder.")
+	download  = flag.Bool("download", false, "Download MobileOrg Files from Dropbox app folder.")
 )
 
 func main() {
